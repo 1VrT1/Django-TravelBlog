@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head_title %}GoTravel! - Управление постом{% endblock head_title %}
+
+{% block content %}
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="container mb-5">
+            <div class="col-md-8">
+                <label>Введите страну:</label>
+                {{ form.country }}
+            </div>
+            <div class="col-md-8">
+                <label>Введите город:</label>
+                {{ form.city }}
+            </div>
+            <div class="col-md-8">
+                <label>Введите заголовок:</label>
+                {{ form.title }}
+            </div>
+            <div class="col-md-3 mt-3">
+                <label>Выберите категорию:</label>
+                {{ form.category }}
+            </div>
+            <div class="col-md-3 mt-3">
+                <label>Добавьте постер</label>
+                {{ form.poster }}
+            </div>
+            <div class="col-md-8 mt-4 ml-3 custom-control custom-checkbox">
+                {{ form.is_public }}
+                <label class="custom-control-label" for="check">
+                    Разрешить публикацию в открытый доступ? (Всегда можно изменить)
+                </label>
+            </div>
+            <div class="col-md-8 mt-5">
+                <h4>Расскажите об этом месте...</h4>
+                {{ form.media }}
+                {{ form.body }}
+            </div>
+            <button type="submit" value="save" class="btn btn-lg btn-secondary mt-3 ml-3">Добавить</button>
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="text-center mt-5">
+        <h2>
+            {{ posts.title }}
+        </h2>
+    </div>
+    <div class="mt-5 text-center">
+        {{ posts.body | safe }}
+    </div>
+</div>
+{% endblock %}

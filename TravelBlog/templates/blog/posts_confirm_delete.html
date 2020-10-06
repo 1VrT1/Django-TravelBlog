@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block head_title %}GoTravel! - Управление постом{% endblock head_title %}
+
+{% block content %}
+    <div class="container text-center">
+        <h1>Удаление поста</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <p>Ты действительно хочешь удалить <strong>"{{ posts.title }}"?</strong></p>
+            <input type="submit" class="btn btn-danger btn-lg" value="Подтвердить"/>
+        </form>
+    </div>
+{% endblock content %}
